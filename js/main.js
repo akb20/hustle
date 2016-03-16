@@ -5,17 +5,17 @@ $(function() {
     });
     $(window).scroll(function() {
         var sc = $(window).scrollTop()
-        if (sc > 650) {
+        if (sc > 450) {
             $(".logo").addClass("small")
         } else {
             $(".logo").removeClass("small")
         }
-        if (sc > 650) {
+        if (sc > 450) {
             $("header").addClass("transparent")
         } else {
             $("header").removeClass("transparent")
         }
-        if (sc > 650) {
+        if (sc > 450) {
             $(".nav-links").addClass("small")
         } else {
             $(".nav-links").removeClass("small")

@@ -41,6 +41,7 @@
         position: fixed;
         z-index: 1;
         width: 100%;
+        z-index: 3;
         transition: all .4s ease-in-out;
         &.transparent {
             background-color: rgba(255, 255, 255, 1);
@@ -88,8 +89,8 @@
     
     .mobile-menu {
         display: none;
-        font-size: 2.4em;
-        color: white;
+        font-size: 2em;
+        color: $secondary;
         margin-bottom: 8px;
         border-bottom: none;
     }
@@ -152,6 +153,7 @@
     
     .about-items {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
     
@@ -188,7 +190,7 @@
                 right: -50px;
                 font-size: 3.5em;
                 font-weight: 700;
-                color: rgba(0, 0, 0, 0.04);
+                color: lighten($highlight, 31%);
                 text-transform: uppercase;
             }
             .name {
@@ -199,6 +201,8 @@
             }
             p {
                 color: lighten($secondary, 40%);
+                position: relative;
+                z-index: 2;
             }
             i {
                 font-size: 1.8em;
@@ -221,11 +225,27 @@
                 width: 100%;
             }
         }
-        .card-emma {
+        .card-ash {
             @extend .card-mickey;
             .role {
-                top: -10px;
+                top: -2px;
                 right: -50px;
+            }
+        }
+        .card-albert {
+            @extend .card-mickey;
+            text-align: right;
+            img {
+                width: 450px;
+                display: block;
+                margin-right: 0;
+                margin-left: 2em;
+                float: right;
+            }
+            .role {
+                top: -25px;
+                right: 960px;
+                width: 100%;
             }
         }
     }
@@ -258,6 +278,18 @@
     
     // - - - Media Queries - - - //
     @media only screen and (max-width: 768px) {
+        header .logo {
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.1em;
+        }
+        a {
+            padding: 1px 0;
+        }
+        .section-title {
+            font-size: 3em;
+        }
         nav {
             display: none;
         }
@@ -277,5 +309,50 @@
         }
         .mobile-menu {
             display: block;
+        }
+        .hero {
+            height: 500px;
+        }
+        .about i {
+            font-size: 3em;
+        }
+        .about-one,
+        .about-two,
+        .about-three {
+            flex-basis: 100%;
+            margin-bottom: 80px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .team,
+        .team .card-stacie,
+        .team .card-albert {
+            text-align: center;
+            img {
+                display: none;
+            }
+        }
+        .team .card-mickey {
+            margin-bottom: 80px;
+        }
+        .team .card-info {
+            margin-top: 1.5em;
+        }
+        .team .role {
+            display: none;
+        }
+        footer .icons-wrap {
+            flex-wrap: wrap;
+        }
+        footer .footer-icon {
+            font-size: 2em;
+            color: $highlight;
+            &:nth-child(even) {
+                color: lighten($highlight, 20%);
+            }
+        }
+        footer h3 {
+            display: none;
         }
     }
